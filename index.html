@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BebasNyeri.com | Bebaskan Nyerimu Tanpa Ketergantungan Obat</title>
-  <meta name="description" content="Terapi Trigger Point profesional — nyeri hilang dalam ~5 menit. Layanan offline & online via WhatsApp video call. Bebaskan nyerimu sekarang!" />
+  <meta name="description" content="Nyeri kronis dan obat anti nyeri bisa merusak organ. Temukan solusi alami Trigger Point Therapy — nyeri hilang ~5 menit tanpa obat." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --green-deep: #0d3d2e;
       --green-mid: #1a6647;
@@ -20,1052 +19,1161 @@
       --warm-white: #fffdf8;
       --gold: #d4a843;
       --gold-light: #f0c96a;
+      --red-dark: #7a1a1a;
+      --red-mid: #b91c1c;
+      --red-bright: #ef4444;
+      --red-light: #fca5a5;
+      --red-pale: #fff5f5;
+      --orange: #ea580c;
       --text-dark: #0d1a14;
       --text-mid: #2e5040;
       --text-soft: #5a7a6a;
       --wa-green: #25D366;
-      --wa-dark: #128C7E;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--warm-white);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--warm-white); color: var(--text-dark); overflow-x: hidden; }
 
     /* ─── HEADER ─── */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 18px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(250, 246, 238, 0.92);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,246,238,0.93); backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(45,189,128,0.15);
       transition: box-shadow 0.3s;
     }
     header.scrolled { box-shadow: 0 4px 32px rgba(13,61,46,0.12); }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      font-weight: 900;
-      color: var(--green-deep);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 900; color: var(--green-deep); text-decoration: none; }
     .logo span { color: var(--green-bright); }
-
     .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--wa-green);
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--wa-green); color: #fff; text-decoration: none;
+      padding: 10px 20px; border-radius: 50px; font-weight: 700; font-size: 0.88rem;
       box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
-    .header-cta svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
+    .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.5); }
+    .header-cta svg { width: 18px; height: 18px; fill: #fff; }
 
     /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
-      background: var(--green-deep);
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 120px 5% 80px;
+      min-height: 100vh; background: #0a0a0a;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 120px 5% 80px;
     }
-
-    /* Organic background blobs */
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,189,128,0.18) 0%, transparent 70%);
-      top: -200px; right: -100px;
-      pointer-events: none;
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&auto=format&fit=crop&q=80');
+      background-size: cover; background-position: center;
+      filter: brightness(0.25) saturate(0.4);
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 70%);
-      bottom: -100px; left: -50px;
-      pointer-events: none;
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(90,0,0,0.55) 0%, rgba(10,10,10,0.7) 60%, rgba(13,61,46,0.3) 100%);
     }
-
-    /* Animated leaf/circle decorations */
-    .hero-deco {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(45,189,128,0.2);
-      animation: rotate-slow 25s linear infinite;
-    }
-    .hero-deco-1 { width: 420px; height: 420px; top: 50%; right: 5%; transform: translateY(-50%); }
-    .hero-deco-2 { width: 280px; height: 280px; top: 50%; right: 9%; transform: translateY(-50%); animation-direction: reverse; }
-
-    @keyframes rotate-slow { to { transform: translateY(-50%) rotate(360deg); } }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-    }
-
+    .hero-inner { position: relative; z-index: 2; max-width: 700px; }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(45,189,128,0.15);
-      border: 1px solid rgba(45,189,128,0.4);
-      color: var(--green-light);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      animation: fadeInUp 0.6s ease both;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.5);
+      color: #fca5a5; padding: 6px 16px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 28px; animation: fadeInUp 0.6s ease both;
     }
-    .hero-badge .dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--green-bright);
-      animation: pulse-dot 1.8s ease infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.6); }
-    }
-
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red-bright); animation: blink 1.4s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      font-weight: 900;
-      color: var(--cream);
-      line-height: 1.12;
-      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900;
+      color: #fff; line-height: 1.12; margin-bottom: 24px;
       animation: fadeInUp 0.6s 0.1s ease both;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--green-bright);
-    }
-    .hero-title .gold { color: var(--gold-light); }
-
+    .hero-title .red { color: #fca5a5; }
+    .hero-title .green { color: var(--green-bright); }
     .hero-sub {
-      font-size: 1.12rem;
-      color: rgba(250,246,238,0.72);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 520px;
-      font-weight: 300;
+      font-size: 1.1rem; color: rgba(255,255,255,0.72); line-height: 1.75;
+      margin-bottom: 40px; max-width: 560px; font-weight: 300;
       animation: fadeInUp 0.6s 0.2s ease both;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.6s 0.3s ease both;
-    }
-
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 0.6s 0.3s ease both; }
     .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--wa-green);
-      color: #fff;
-      text-decoration: none;
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--wa-green); color: #fff; text-decoration: none;
+      padding: 17px 34px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
       transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
     }
-    .btn-wa::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.1);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,211,102,0.5); }
-    .btn-wa:hover::after { opacity: 1; }
+    .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37,211,102,0.55); }
     .btn-wa svg { width: 22px; height: 22px; fill: #fff; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      padding: 17px 28px; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+    .hero-scroll-hint {
+      margin-top: 60px; display: flex; align-items: center; gap: 12px;
+      color: rgba(255,255,255,0.4); font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      animation: fadeInUp 0.6s 0.5s ease both;
+    }
+    .hero-scroll-hint .line { width: 40px; height: 1px; background: rgba(255,255,255,0.25); }
 
-    .btn-scroll {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      border: 1.5px solid rgba(45,189,128,0.45);
-      color: var(--green-light);
-      text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-    .btn-scroll:hover {
-      background: rgba(45,189,128,0.1);
-      border-color: var(--green-bright);
-      color: var(--green-bright);
-    }
+    /* ─── SECTION HELPERS ─── */
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    .reveal { opacity:0; transform:translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+    .section-title em { font-style: italic; }
+    .section-sub { font-size: 1.02rem; line-height: 1.75; max-width: 560px; }
 
-    /* stats strip */
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(45,189,128,0.2);
-      animation: fadeInUp 0.6s 0.4s ease both;
+    /* ─── FEAR 1: BAHAYA NYERI ─── */
+    .fear1 {
+      background: var(--red-pale); padding: 100px 5%;
+      border-top: 4px solid var(--red-bright);
     }
-    .stat-item .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-    .stat-item .label {
-      font-size: 0.8rem;
-      color: rgba(250,246,238,0.55);
-      margin-top: 4px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    .fear1 .section-label { color: var(--red-mid); }
+    .fear1 .section-title { color: var(--red-dark); }
+    .fear1 .section-title em { color: var(--red-bright); }
+    .fear1 .section-sub { color: #6b1a1a; margin-bottom: 56px; }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+    .fear1-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-radius: 28px; overflow: hidden;
+      box-shadow: 0 24px 72px rgba(120,0,0,0.15);
     }
+    @media(max-width:768px){ .fear1-grid{grid-template-columns:1fr;} }
 
-    /* ─── PAIN SECTION ─── */
-    .pain {
-      background: var(--cream);
-      padding: 100px 5%;
+    .fear1-img {
+      position: relative; min-height: 400px; overflow: hidden;
     }
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--green-bright);
-      margin-bottom: 14px;
+    .fear1-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(0.7) brightness(0.85);
+      transition: transform 6s ease;
     }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 900;
-      color: var(--green-deep);
-      line-height: 1.2;
-      margin-bottom: 16px;
+    .fear1-img:hover img { transform: scale(1.04); }
+    .fear1-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 50%, var(--red-pale) 100%);
     }
-    .section-title em { font-style: italic; color: var(--green-mid); }
-    .section-sub {
-      color: var(--text-soft);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      max-width: 560px;
-      margin-bottom: 56px;
+    @media(max-width:768px){
+      .fear1-img-overlay { background: linear-gradient(to bottom, transparent 50%, var(--red-pale) 100%); }
     }
 
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
+    .fear1-content {
+      background: #fff; padding: 48px 44px;
+      display: flex; flex-direction: column; justify-content: center;
     }
-    .pain-card {
-      background: #fff;
-      border: 1.5px solid rgba(13,61,46,0.08);
-      border-radius: 20px;
-      padding: 28px 24px;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      cursor: default;
+    .fear1-content h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900;
+      color: var(--red-dark); margin-bottom: 24px;
     }
-    .pain-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 48px rgba(13,61,46,0.1);
-      border-color: rgba(45,189,128,0.35);
+    .danger-list { list-style: none; }
+    .danger-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 0; border-bottom: 1px solid #fee2e2;
     }
-    .pain-icon {
-      width: 48px; height: 48px;
-      border-radius: 14px;
-      background: rgba(45,189,128,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 16px;
+    .danger-list li:last-child { border-bottom: none; }
+    .danger-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: #fee2e2; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; flex-shrink: 0; margin-top: 2px;
     }
-    .pain-card h3 {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--green-deep);
-      margin-bottom: 6px;
-    }
-    .pain-card p { font-size: 0.85rem; color: var(--text-soft); line-height: 1.6; }
+    .danger-list h4 { font-weight: 700; font-size: 0.95rem; color: var(--red-dark); margin-bottom: 3px; }
+    .danger-list p { font-size: 0.85rem; color: #7f1d1d; line-height: 1.6; }
 
-    /* ─── HOW IT WORKS ─── */
-    .how {
-      background: var(--green-deep);
-      padding: 100px 5%;
+    /* warning stat strip */
+    .fear-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 48px;
+    }
+    @media(max-width:560px){ .fear-stats{grid-template-columns:1fr;} }
+    .fear-stat {
+      background: #fff; border: 2px solid #fecaca;
+      border-radius: 20px; padding: 28px 20px; text-align: center;
+    }
+    .fear-stat .fs-num {
+      font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900;
+      color: var(--red-bright); line-height: 1;
+    }
+    .fear-stat .fs-label { font-size: 0.82rem; color: #7f1d1d; margin-top: 6px; line-height: 1.5; }
+
+    /* ─── FEAR 2: BAHAYA OBAT ─── */
+    .fear2 { background: #1a0a00; padding: 100px 5%; position: relative; overflow: hidden; }
+    .fear2::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(234,88,12,0.12) 0%, transparent 65%);
+    }
+    .fear2 .section-label { color: #fb923c; }
+    .fear2 .section-title { color: #fff5eb; }
+    .fear2 .section-title em { color: #fb923c; }
+    .fear2 .section-sub { color: rgba(255,245,235,0.62); margin-bottom: 56px; }
+
+    .fear2-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    @media(max-width:768px){ .fear2-layout{grid-template-columns:1fr;} }
+
+    .fear2-visual { position: relative; }
+    .fear2-img-wrap {
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 24px 80px rgba(234,88,12,0.25);
       position: relative;
-      overflow: hidden;
     }
-    .how::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,189,128,0.08) 0%, transparent 70%);
-      top: -200px; right: -200px;
-      pointer-events: none;
+    .fear2-img-wrap img { width: 100%; display: block; filter: saturate(0.6) brightness(0.9); }
+    .fear2-label {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: rgba(26,10,0,0.88); border: 1px solid rgba(251,146,60,0.35);
+      border-radius: 16px; padding: 16px 20px; backdrop-filter: blur(8px);
     }
-    .how .section-title { color: var(--cream); }
-    .how .section-sub { color: rgba(250,246,238,0.6); }
+    .fear2-label p { font-size: 0.85rem; color: rgba(255,245,235,0.75); line-height: 1.55; }
+    .fear2-label strong { color: #fb923c; }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      position: relative;
-      z-index: 2;
-    }
-    .step {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(45,189,128,0.2);
-      border-radius: 24px;
-      padding: 36px 28px;
-      position: relative;
+    .fear2-cards { display: flex; flex-direction: column; gap: 16px; }
+    .fear2-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(251,146,60,0.2);
+      border-radius: 20px; padding: 24px 24px;
+      display: flex; gap: 16px; align-items: flex-start;
       transition: background 0.25s, border-color 0.25s;
     }
-    .step:hover {
-      background: rgba(45,189,128,0.08);
-      border-color: rgba(45,189,128,0.4);
+    .fear2-card:hover { background: rgba(234,88,12,0.08); border-color: rgba(251,146,60,0.4); }
+    .fear2-card-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(234,88,12,0.18); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
     }
-    .step-num {
+    .fear2-card h4 { font-weight: 700; color: #fff5eb; margin-bottom: 5px; font-size: 0.97rem; }
+    .fear2-card p { font-size: 0.85rem; color: rgba(255,245,235,0.6); line-height: 1.6; }
+    .fear2-card .badge-danger {
+      display: inline-block; margin-top: 6px;
+      background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.4);
+      color: #fca5a5; font-size: 0.72rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 50px; letter-spacing: 0.06em;
+    }
+
+    /* pill visual */
+    .pill-counter {
+      margin-top: 36px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(251,146,60,0.25);
+      border-radius: 20px; padding: 24px 28px;
+    }
+    .pill-counter p { font-size: 0.82rem; color: rgba(255,245,235,0.5); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { width: 18px; height: 18px; border-radius: 50%; background: #ea580c; opacity: 0.9; }
+    .pill.dead { background: #4b5563; opacity: 0.4; }
+    .pill-note { margin-top: 10px; font-size: 0.8rem; color: rgba(251,146,60,0.7); }
+
+    /* ─── TRANSITION BRIDGE ─── */
+    .bridge {
+      background: linear-gradient(180deg, #1a0a00 0%, #0d3d2e 100%);
+      padding: 80px 5%; text-align: center; position: relative; overflow: hidden;
+    }
+    .bridge::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(45,189,128,0.12) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .bridge-text {
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: rgba(45,189,128,0.18);
-      line-height: 1;
-      margin-bottom: 16px;
+      font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900;
+      color: #fff; max-width: 700px; margin: 0 auto; line-height: 1.35;
+      position: relative; z-index: 1;
     }
-    .step h3 {
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 10px;
-      font-size: 1.1rem;
+    .bridge-text .accent { color: var(--green-bright); font-style: italic; }
+    .bridge-text .red { color: #fca5a5; }
+    .bridge-arrow {
+      font-size: 2.5rem; margin-top: 20px; display: block;
+      color: var(--green-bright); animation: bounce-arrow 1.8s ease infinite;
     }
-    .step p { color: rgba(250,246,238,0.6); font-size: 0.9rem; line-height: 1.65; }
-    .step-icon {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
+    @keyframes bounce-arrow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
 
-    /* ─── BENEFIT / WHY ─── */
-    .why {
-      background: var(--warm-white);
-      padding: 100px 5%;
+    /* ─── SOLUTION HERO ─── */
+    .solution-hero {
+      background: var(--green-deep); padding: 100px 5%;
+      position: relative; overflow: hidden;
     }
-    .why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .why-inner { grid-template-columns: 1fr; gap: 48px; }
-    }
-
-    .why-visual {
-      position: relative;
-    }
-    .why-card-main {
-      background: var(--green-deep);
-      border-radius: 28px;
-      padding: 48px 40px;
-      color: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-    .why-card-main::after {
-      content: '';
-      position: absolute;
-      width: 300px; height: 300px;
-      border-radius: 50%;
+    .solution-hero::before {
+      content: ''; position: absolute;
+      width: 700px; height: 700px; border-radius: 50%;
       background: radial-gradient(circle, rgba(45,189,128,0.15) 0%, transparent 70%);
-      bottom: -80px; right: -60px;
+      top: -200px; right: -200px;
     }
-    .why-card-main .big-time {
-      font-family: 'Playfair Display', serif;
-      font-size: 5.5rem;
-      font-weight: 900;
-      color: var(--green-bright);
-      line-height: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
+    .solution-hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
     }
-    .why-card-main .big-time small {
-      font-size: 1.6rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 300;
-      color: var(--green-light);
-    }
-    .why-card-main p {
-      margin-top: 12px;
-      color: rgba(250,246,238,0.7);
-      font-size: 1rem;
-      line-height: 1.6;
+    @media(max-width:768px){ .solution-hero-inner{grid-template-columns:1fr;} }
+
+    .solution-hero .section-label { color: var(--green-bright); }
+    .solution-hero .section-title { color: var(--cream); }
+    .solution-hero .section-title em { color: var(--gold-light); }
+    .solution-hero .section-sub { color: rgba(250,246,238,0.65); margin-bottom: 36px; }
+
+    .solution-img-wrap {
+      border-radius: 28px; overflow: hidden;
+      box-shadow: 0 32px 96px rgba(0,0,0,0.4);
       position: relative;
-      z-index: 1;
     }
+    .solution-img-wrap img { width: 100%; display: block; }
+    .solution-img-badge {
+      position: absolute; top: 20px; left: 20px;
+      background: var(--gold); color: var(--green-deep);
+      font-weight: 800; font-size: 0.82rem; padding: 8px 16px;
+      border-radius: 50px; letter-spacing: 0.05em; text-transform: uppercase;
+      box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+    }
+    .solution-img-stat {
+      position: absolute; bottom: 20px; right: 20px;
+      background: rgba(13,61,46,0.9); border: 1px solid rgba(45,189,128,0.4);
+      border-radius: 18px; padding: 16px 20px; backdrop-filter: blur(8px);
+      text-align: center;
+    }
+    .solution-img-stat .big { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--green-bright); line-height: 1; }
+    .solution-img-stat small { font-size: 0.75rem; color: rgba(250,246,238,0.6); display: block; margin-top: 4px; }
 
-    .why-card-float {
-      position: absolute;
-      bottom: -24px; right: -24px;
-      background: var(--gold);
-      border-radius: 20px;
-      padding: 20px 24px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--green-deep);
-      box-shadow: 0 12px 32px rgba(212,168,67,0.35);
-      max-width: 180px;
-      line-height: 1.5;
+    .solution-benefits { list-style: none; }
+    .solution-benefits li {
+      display: flex; gap: 14px; padding: 16px 0;
+      border-bottom: 1px solid rgba(45,189,128,0.12); align-items: flex-start;
     }
-    .why-card-float strong { font-size: 1.05rem; display: block; }
+    .solution-benefits li:last-child { border-bottom: none; }
+    .sol-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: rgba(45,189,128,0.15); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .solution-benefits h4 { font-weight: 700; color: var(--cream); font-size: 0.97rem; margin-bottom: 3px; }
+    .solution-benefits p { font-size: 0.85rem; color: rgba(250,246,238,0.58); line-height: 1.6; }
 
-    .why-list { list-style: none; }
-    .why-list li {
-      display: flex;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(13,61,46,0.07);
-      align-items: flex-start;
+    /* ─── HOW IT WORKS ─── */
+    .how { background: var(--cream); padding: 100px 5%; }
+    .how .section-label { color: var(--green-mid); }
+    .how .section-title { color: var(--green-deep); }
+    .how .section-title em { color: var(--green-mid); }
+    .how .section-sub { color: var(--text-soft); margin-bottom: 56px; }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
     }
-    .why-list li:last-child { border-bottom: none; }
-    .why-list .icon {
-      width: 40px; height: 40px;
-      border-radius: 12px;
-      background: rgba(45,189,128,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
+    .step {
+      background: #fff; border: 1.5px solid rgba(13,61,46,0.08);
+      border-radius: 24px; padding: 36px 28px;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
-    .why-list h4 {
-      font-weight: 700;
-      color: var(--green-deep);
-      font-size: 0.97rem;
-      margin-bottom: 4px;
+    .step:hover { transform:translateY(-6px); box-shadow:0 20px 56px rgba(13,61,46,0.1); border-color:rgba(45,189,128,0.3); }
+    .step-num { font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:rgba(45,189,128,0.2); line-height:1; margin-bottom:14px; }
+    .step h3 { font-weight:700; color:var(--green-deep); margin-bottom:8px; font-size:1.05rem; }
+    .step p { font-size:0.87rem; color:var(--text-soft); line-height:1.65; }
+    .step-icon { font-size:1.5rem; margin-bottom:10px; }
+
+    /* ─── COMPARISON TABLE ─── */
+    .compare { background: var(--warm-white); padding: 100px 5%; }
+    .compare .section-label { color: var(--green-mid); }
+    .compare .section-title { color: var(--green-deep); }
+    .compare .section-title em { color: var(--green-mid); }
+    .compare .section-sub { color: var(--text-soft); margin-bottom: 48px; }
+
+    .compare-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 12px 56px rgba(13,61,46,0.1);
     }
-    .why-list p { font-size: 0.87rem; color: var(--text-soft); line-height: 1.6; }
+    .compare-table th {
+      padding: 20px 24px; font-size: 0.9rem; font-weight: 700; text-align: center;
+    }
+    .compare-table th:first-child { text-align: left; background: var(--green-deep); color: var(--cream); width: 40%; }
+    .compare-table th:nth-child(2) { background: #fee2e2; color: var(--red-dark); }
+    .compare-table th:nth-child(3) { background: var(--green-mid); color: var(--cream); }
+    .compare-table td {
+      padding: 18px 24px; font-size: 0.9rem; border-bottom: 1px solid rgba(0,0,0,0.06);
+      vertical-align: middle;
+    }
+    .compare-table td:first-child { background: var(--cream); font-weight: 600; color: var(--green-deep); }
+    .compare-table td:nth-child(2) { background: #fff; text-align: center; color: var(--red-mid); }
+    .compare-table td:nth-child(3) { background: #f0fdf4; text-align: center; color: var(--green-mid); font-weight: 600; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .badge-bad { display:inline-block; background:#fee2e2; color:var(--red-mid); font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:50px; }
+    .badge-good { display:inline-block; background:rgba(45,189,128,0.15); color:var(--green-mid); font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:50px; }
 
     /* ─── LAYANAN ─── */
-    .service {
-      background: var(--cream);
-      padding: 100px 5%;
+    .service { background: var(--green-deep); padding: 100px 5%; position: relative; overflow: hidden; }
+    .service::before {
+      content:''; position:absolute; width:600px; height:600px; border-radius:50%;
+      background:radial-gradient(circle,rgba(45,189,128,0.08) 0%,transparent 70%);
+      bottom:-200px; right:-200px;
     }
+    .service .section-label { color:var(--green-bright); }
+    .service .section-title { color:var(--cream); }
+    .service .section-title em { color:var(--gold-light); }
+    .service .section-sub { color:rgba(250,246,238,0.6); margin-bottom:48px; }
+
     .service-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      max-width: 860px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
     }
-    @media (max-width: 640px) { .service-grid { grid-template-columns: 1fr; } }
+    @media(max-width:640px){ .service-grid{grid-template-columns:1fr;} }
 
     .service-card {
-      border-radius: 28px;
-      padding: 44px 36px;
-      position: relative;
-      overflow: hidden;
+      border-radius: 28px; overflow: hidden;
       transition: transform 0.25s;
     }
     .service-card:hover { transform: translateY(-6px); }
-    .service-card.online {
-      background: var(--green-deep);
-      color: var(--cream);
-      border: none;
+    .service-card-img { position: relative; height: 220px; overflow: hidden; }
+    .service-card-img img { width:100%; height:100%; object-fit:cover; transition: transform 6s ease; }
+    .service-card:hover .service-card-img img { transform: scale(1.06); }
+    .service-card-img-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(13,61,46,0.7) 100%);
     }
-    .service-card.offline {
-      background: #fff;
-      border: 2px solid rgba(13,61,46,0.1);
+    .service-card-img-badge {
+      position:absolute; top:16px; left:16px;
+      background:var(--wa-green); color:#fff;
+      font-size:0.75rem; font-weight:700; padding:5px 14px;
+      border-radius:50px; letter-spacing:0.05em;
     }
-    .service-card .s-icon {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      display: block;
+    .service-card-body { background:#fff; padding:32px 28px; }
+    .service-card-body h3 {
+      font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700;
+      color:var(--green-deep); margin-bottom:10px;
     }
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .service-card.online h3 { color: var(--cream); }
-    .service-card.offline h3 { color: var(--green-deep); }
-    .service-card p {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-    .service-card.online p { color: rgba(250,246,238,0.7); }
-    .service-card.offline p { color: var(--text-soft); }
-
+    .service-card-body p { font-size:0.9rem; color:var(--text-soft); line-height:1.7; margin-bottom:24px; }
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--wa-green);
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 26px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--wa-green); color:#fff; text-decoration:none;
+      padding:13px 26px; border-radius:50px; font-weight:700; font-size:0.9rem;
+      box-shadow:0 6px 24px rgba(37,211,102,0.35);
+      transition:transform 0.2s, box-shadow 0.2s;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
-    .btn-primary svg { width: 18px; height: 18px; fill: #fff; }
-
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(37,211,102,0.5); }
+    .btn-primary svg { width:18px; height:18px; fill:#fff; }
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--green-deep);
-      color: var(--cream);
-      text-decoration: none;
-      padding: 14px 26px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      transition: background 0.2s;
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--green-deep); color:var(--cream); text-decoration:none;
+      padding:13px 24px; border-radius:50px; font-weight:700; font-size:0.9rem;
+      transition:background 0.2s; margin-left:10px;
     }
-    .btn-secondary:hover { background: var(--green-mid); }
-    .btn-secondary svg { width: 18px; height: 18px; fill: var(--cream); }
+    .btn-secondary:hover { background:var(--green-mid); }
 
-    /* glow decoration on online card */
-    .service-card.online::after {
-      content: '';
-      position: absolute;
-      width: 250px; height: 250px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,189,128,0.12) 0%, transparent 70%);
-      bottom: -60px; right: -60px;
-      pointer-events: none;
-    }
-
-    /* ─── TESTIMONIAL ─── */
-    .testi {
-      background: var(--warm-white);
-      padding: 100px 5%;
-    }
+    /* ─── TESTIMONIALS ─── */
+    .testi { background: var(--cream); padding: 100px 5%; }
+    .testi .section-label { color:var(--green-mid); }
+    .testi .section-title { color:var(--green-deep); }
+    .testi .section-title em { color:var(--green-mid); }
+    .testi .section-sub { color:var(--text-soft); margin-bottom:48px; }
     .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;
     }
     .testi-card {
-      background: #fff;
-      border: 1.5px solid rgba(13,61,46,0.07);
-      border-radius: 24px;
-      padding: 32px 28px;
-      transition: box-shadow 0.25s, transform 0.25s;
+      background:#fff; border:1.5px solid rgba(13,61,46,0.07);
+      border-radius:24px; padding:32px 28px;
+      transition:box-shadow 0.25s, transform 0.25s;
     }
-    .testi-card:hover {
-      box-shadow: 0 16px 48px rgba(13,61,46,0.1);
-      transform: translateY(-4px);
-    }
-    .testi-card .stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
-    .testi-card blockquote {
-      font-size: 0.95rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    .testi-card blockquote em { font-style: italic; color: var(--green-mid); font-weight: 600; }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .testi-card:hover { box-shadow:0 16px 48px rgba(13,61,46,0.1); transform:translateY(-4px); }
+    .testi-card .stars { color:var(--gold); font-size:1rem; letter-spacing:2px; margin-bottom:14px; }
+    .testi-card blockquote { font-size:0.95rem; color:var(--text-mid); line-height:1.75; margin-bottom:20px; }
+    .testi-card blockquote em { font-style:italic; color:var(--green-mid); font-weight:600; }
+    .testi-author { display:flex; align-items:center; gap:12px; }
     .testi-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      background: var(--green-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.95rem;
-      flex-shrink: 0;
+      width:44px; height:44px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:700; font-size:1rem; flex-shrink:0;
     }
-    .testi-name { font-weight: 700; font-size: 0.92rem; color: var(--green-deep); }
-    .testi-loc { font-size: 0.78rem; color: var(--text-soft); }
+    .testi-name { font-weight:700; font-size:0.92rem; color:var(--green-deep); }
+    .testi-loc { font-size:0.78rem; color:var(--text-soft); }
+
+    /* ─── PAIN TYPES ─── */
+    .pain-types { background:#fff; padding:80px 5%; }
+    .pain-types .section-label { color:var(--green-mid); }
+    .pain-types .section-title { color:var(--green-deep); }
+    .pain-types .section-title em { color:var(--green-mid); }
+    .pain-types .section-sub { color:var(--text-soft); margin-bottom:40px; }
+    .pain-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px;
+    }
+    .pain-card {
+      background:var(--cream); border:1.5px solid rgba(13,61,46,0.07);
+      border-radius:18px; padding:24px 20px;
+      transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .pain-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(13,61,46,0.1); border-color:rgba(45,189,128,0.3); }
+    .pain-card .icon { font-size:1.8rem; margin-bottom:10px; }
+    .pain-card h3 { font-weight:700; font-size:0.93rem; color:var(--green-deep); margin-bottom:4px; }
+    .pain-card p { font-size:0.8rem; color:var(--text-soft); line-height:1.6; }
 
     /* ─── CTA BAND ─── */
     .cta-band {
-      background: linear-gradient(135deg, var(--green-deep) 0%, #0e4a35 100%);
-      padding: 100px 5%;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background:var(--green-deep); padding:100px 5%; text-align:center;
+      position:relative; overflow:hidden;
     }
     .cta-band::before {
-      content: '';
-      position: absolute;
-      width: 800px; height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,189,128,0.1) 0%, transparent 65%);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      content:''; position:absolute; width:800px; height:800px; border-radius:50%;
+      background:radial-gradient(circle,rgba(45,189,128,0.1) 0%,transparent 65%);
+      top:50%; left:50%; transform:translate(-50%,-50%);
     }
-    .cta-band .section-title { color: var(--cream); max-width: 640px; margin: 0 auto 16px; }
-    .cta-band .section-sub { max-width: 500px; margin: 0 auto 48px; color: rgba(250,246,238,0.65); }
-    .cta-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
+    .cta-band .section-title { color:var(--cream); max-width:640px; margin:0 auto 16px; }
+    .cta-band .section-sub { max-width:500px; margin:0 auto 48px; color:rgba(250,246,238,0.62); }
+    .cta-group { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; position:relative; z-index:2; }
     .btn-wa-large {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--wa-green);
-      color: #fff;
-      text-decoration: none;
-      padding: 20px 44px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 10px 40px rgba(37,211,102,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
+      display:inline-flex; align-items:center; gap:12px;
+      background:var(--wa-green); color:#fff; text-decoration:none;
+      padding:20px 44px; border-radius:50px; font-weight:700; font-size:1.1rem;
+      box-shadow:0 10px 40px rgba(37,211,102,0.45);
+      transition:transform 0.2s, box-shadow 0.2s;
     }
-    .btn-wa-large:hover { transform: translateY(-3px); box-shadow: 0 18px 56px rgba(37,211,102,0.55); }
-    .btn-wa-large svg { width: 24px; height: 24px; fill: #fff; }
-
+    .btn-wa-large:hover { transform:translateY(-3px); box-shadow:0 18px 56px rgba(37,211,102,0.55); }
+    .btn-wa-large svg { width:24px; height:24px; fill:#fff; }
     .btn-maps {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      border: 1.5px solid rgba(45,189,128,0.45);
-      color: var(--green-light);
-      text-decoration: none;
-      padding: 20px 36px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s;
+      display:inline-flex; align-items:center; gap:10px;
+      background:transparent; border:1.5px solid rgba(45,189,128,0.45);
+      color:var(--green-light); text-decoration:none;
+      padding:20px 36px; border-radius:50px; font-weight:600; font-size:1rem;
+      transition:all 0.2s;
     }
-    .btn-maps:hover { background: rgba(45,189,128,0.1); border-color: var(--green-bright); }
+    .btn-maps:hover { background:rgba(45,189,128,0.1); border-color:var(--green-bright); }
 
     /* ─── FOOTER ─── */
-    footer {
-      background: var(--text-dark);
-      padding: 56px 5% 40px;
-      color: rgba(250,246,238,0.55);
-    }
+    footer { background:var(--text-dark); padding:56px 5% 40px; color:rgba(250,246,238,0.5); }
     .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      flex-wrap: wrap;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      margin-bottom: 32px;
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:40px; flex-wrap:wrap; padding-bottom:40px;
+      border-bottom:1px solid rgba(255,255,255,0.07); margin-bottom:32px;
     }
-    .footer-brand .logo { color: var(--cream); }
-    .footer-brand p { margin-top: 12px; font-size: 0.88rem; max-width: 280px; line-height: 1.65; }
-    .footer-contact { font-size: 0.88rem; }
-    .footer-contact h4 { color: var(--cream); font-weight: 700; margin-bottom: 14px; font-size: 0.95rem; }
+    .footer-brand .logo { color:var(--cream); }
+    .footer-brand p { margin-top:12px; font-size:0.88rem; max-width:280px; line-height:1.65; }
+    .footer-contact h4 { color:var(--cream); font-weight:700; margin-bottom:14px; }
     .footer-contact a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(250,246,238,0.6);
-      text-decoration: none;
-      margin-bottom: 10px;
-      transition: color 0.2s;
+      display:flex; align-items:center; gap:8px;
+      color:rgba(250,246,238,0.6); text-decoration:none;
+      margin-bottom:10px; font-size:0.88rem; transition:color 0.2s;
     }
-    .footer-contact a:hover { color: var(--green-bright); }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-    }
-    .footer-bottom .tagline { color: rgba(250,246,238,0.35); }
-    .footer-bottom .bismillah { color: var(--green-bright); opacity: 0.7; }
+    .footer-contact a:hover { color:var(--green-bright); }
+    .footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.8rem; }
+    .footer-bottom .tagline { color:rgba(250,246,238,0.3); }
+    .footer-bottom .bismillah { color:var(--green-bright); opacity:0.65; }
 
-    /* ─── FLOATING WA BUTTON ─── */
+    /* ─── FLOATING WA ─── */
     .wa-float {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      background: var(--wa-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 32px rgba(37,211,102,0.5);
-      z-index: 200;
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: float-pulse 3s ease-in-out infinite;
+      position:fixed; bottom:28px; right:28px;
+      width:62px; height:62px; border-radius:50%;
+      background:var(--wa-green); display:flex; align-items:center; justify-content:center;
+      box-shadow:0 8px 32px rgba(37,211,102,0.5); z-index:200;
+      transition:transform 0.2s;
+      animation:wa-pulse 3s ease-in-out infinite;
     }
-    .wa-float:hover { transform: scale(1.12); box-shadow: 0 14px 48px rgba(37,211,102,0.65); }
-    .wa-float svg { width: 32px; height: 32px; fill: #fff; }
-    @keyframes float-pulse {
-      0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
-      50% { box-shadow: 0 12px 48px rgba(37,211,102,0.75); }
+    .wa-float:hover { transform:scale(1.12); }
+    .wa-float svg { width:33px; height:33px; fill:#fff; }
+    @keyframes wa-pulse {
+      0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.5)}
+      50%{box-shadow:0 12px 52px rgba(37,211,102,0.75)}
+    }
+    .wa-label {
+      position:fixed; bottom:36px; right:100px;
+      background:var(--green-deep); color:var(--cream);
+      padding:8px 16px; border-radius:50px; font-size:0.82rem; font-weight:600;
+      box-shadow:0 4px 16px rgba(0,0,0,0.2); white-space:nowrap; z-index:200;
+      pointer-events:none;
     }
 
-    .wa-float-label {
-      position: fixed;
-      bottom: 36px; right: 98px;
-      background: var(--green-deep);
-      color: var(--cream);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-      white-space: nowrap;
-      z-index: 200;
-      animation: float-pulse-label 4s ease-in-out infinite 1s;
-      pointer-events: none;
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; flex-wrap: wrap;
+      padding: 28px 5%;
     }
-    @keyframes float-pulse-label {
-      0%, 85%, 100% { opacity: 1; }
-      92% { opacity: 0.4; }
+    .cta-strip.dark { background: var(--green-deep); }
+    .cta-strip.light { background: var(--cream); }
+    .cta-strip.red-bg { background: var(--red-pale); border-top: 1px solid #fecaca; border-bottom: 1px solid #fecaca; }
+    .cta-strip.orange-bg { background: #1a0a00; border-top: 1px solid rgba(251,146,60,0.2); }
+    .cta-strip.mid { background: var(--warm-white); border-top: 2px solid rgba(45,189,128,0.15); border-bottom: 2px solid rgba(45,189,128,0.15); }
+    .cta-strip p {
+      font-size: 1rem; font-weight: 600; color: inherit;
+      text-align: center;
+    }
+    .cta-strip.dark p, .cta-strip.orange-bg p { color: rgba(250,246,238,0.8); }
+    .cta-strip.light p, .cta-strip.mid p { color: var(--green-deep); }
+    .cta-strip.red-bg p { color: var(--red-dark); }
+    .btn-wa-strip {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--wa-green); color: #fff; text-decoration: none;
+      padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: strip-pulse 2.5s ease-in-out infinite;
+    }
+    .btn-wa-strip:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+    .btn-wa-strip svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+    @keyframes strip-pulse {
+      0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 8px 36px rgba(37,211,102,0.65); }
+    }
+    .btn-wa-strip.urgent { background: var(--red-mid); animation: strip-pulse-red 2s ease-in-out infinite; }
+    .btn-wa-strip.urgent:hover { box-shadow: 0 10px 32px rgba(185,28,28,0.5); }
+    @keyframes strip-pulse-red {
+      0%,100% { box-shadow: 0 6px 24px rgba(185,28,28,0.35); }
+      50% { box-shadow: 0 8px 36px rgba(185,28,28,0.6); }
     }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 640px) {
-      .hero-stats { gap: 24px; flex-wrap: wrap; }
-      .hero-deco-1, .hero-deco-2 { display: none; }
-      .why-card-float { position: static; margin-top: 16px; max-width: 100%; }
-      .why-visual { margin-bottom: 24px; }
-      .header-cta span { display: none; }
-      .wa-float-label { display: none; }
-    }
-
-    /* ─── SCROLL ANIMATIONS ─── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @media(max-width:640px){
+      .wa-label{display:none;}
+      .header-cta span{display:none;}
+      .compare-table{font-size:0.8rem;}
+      .compare-table th, .compare-table td{padding:14px 12px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header id="header">
-    <a href="#" class="logo">Bebas<span>Nyeri</span>.com</a>
-    <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20yang%20saya%20alami." class="header-cta" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
-      <span>Konsultasi Gratis</span>
-    </a>
-  </header>
-
-  <!-- FLOATING WA -->
-  <div class="wa-float-label">💬 Chat Sekarang!</div>
-  <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20yang%20saya%20alami." class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+<!-- HEADER -->
+<header id="header">
+  <a href="#" class="logo">Bebas<span>Nyeri</span>.com</a>
+  <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20yang%20saya%20alami." class="header-cta" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+    <span>Chat WhatsApp</span>
   </a>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-deco hero-deco-1"></div>
-    <div class="hero-deco hero-deco-2"></div>
-    <div class="hero-inner">
-      <div class="hero-badge"><span class="dot"></span> Terapi Tanpa Obat · Halal · Aman</div>
-      <h1 class="hero-title">
-        <em>Bebas</em> dari Nyeri<br>dalam <span class="gold">~5 Menit</span>,<br>dengan Izin Allah ﷻ
-      </h1>
-      <p class="hero-sub">
-        Metode <strong>Trigger Point Therapy</strong> — terapi terarah langsung ke sumber nyeri. Bisa dari rumah via video call WhatsApp, atau kunjungi klinik kami langsung.
-      </p>
-      <div class="hero-actions">
-        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20yang%20saya%20alami." class="btn-wa" target="_blank" rel="noopener">
+<!-- FLOATING WA -->
+<div class="wa-label">💬 Konsultasi Gratis!</div>
+<a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20saya." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Peringatan Penting untuk Anda</div>
+    <h1 class="hero-title">
+      Nyeri yang <span class="red">Dibiarkan</span><br>
+      &amp; Obat yang <span class="red">Dikonsumsi Terus</span><br>
+      Bisa <span class="red">Menghancurkan</span> Hidupmu
+    </h1>
+    <p class="hero-sub">
+      Baca ini sebelum terlambat. Nyeri kronis bukan sekadar rasa sakit biasa — ia menyerang organ, memperlemah tubuh, dan obat penghilang nyeri yang sering diminum justru menambah masalah baru.
+      <strong style="color:#fff;">Ada solusinya.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="#solusi" class="btn-ghost">Lihat Bahayanya ↓</a>
+      <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20mengenai%20nyeri%20saya." class="btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+        Konsultasi Gratis Sekarang
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="line"></span>
+      Scroll untuk tahu lebih lanjut
+      <span class="line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FEAR 1: BAHAYA NYERI DIBIARKAN
+════════════════════════════════════════ -->
+<section class="fear1" id="solusi">
+  <div class="reveal">
+    <div class="section-label">⚠️ Bahaya #1</div>
+    <h2 class="section-title">Nyeri Kronis yang Dibiarkan<br><em>Merusak Lebih dari Sekadar Rasa Sakit</em></h2>
+    <p class="section-sub">Banyak orang menganggap nyeri biasa dan memilih bertahan. Padahal nyeri yang tidak ditangani dengan benar bisa berubah menjadi kondisi kronis yang jauh lebih serius.</p>
+  </div>
+
+  <div class="fear1-grid reveal">
+    <div class="fear1-img">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=80" alt="Orang kesakitan memegang leher" loading="lazy" />
+      <div class="fear1-img-overlay"></div>
+    </div>
+    <div class="fear1-content">
+      <h3>Ini yang Terjadi Jika Nyeri Diabaikan:</h3>
+      <ul class="danger-list">
+        <li>
+          <div class="danger-icon">🧠</div>
+          <div>
+            <h4>Nyeri Menjadi Kronis Permanen</h4>
+            <p>Nyeri yang dibiarkan melatih otak untuk "selalu merasakan sakit." Jalur saraf nyeri menjadi semakin sensitif dan susah dimatikan.</p>
+          </div>
+        </li>
+        <li>
+          <div class="danger-icon">💤</div>
+          <div>
+            <h4>Gangguan Tidur & Kelelahan Kronis</h4>
+            <p>Nyeri mengganggu kualitas tidur. Tubuh yang tidak beristirahat cukup rentan terhadap penyakit lain dan penurunan imunitas.</p>
+          </div>
+        </li>
+        <li>
+          <div class="danger-icon">😔</div>
+          <div>
+            <h4>Depresi & Kecemasan</h4>
+            <p>Penelitian menunjukkan nyeri kronis meningkatkan risiko depresi hingga 4 kali lipat. Nyeri fisik dan mental saling memperburuk.</p>
+          </div>
+        </li>
+        <li>
+          <div class="danger-icon">🦴</div>
+          <div>
+            <h4>Kerusakan Sendi & Saraf Permanen</h4>
+            <p>Otot yang tegang kronis menekan sendi dan saraf di sekitarnya, menyebabkan kerusakan struktural jangka panjang.</p>
+          </div>
+        </li>
+        <li>
+          <div class="danger-icon">🚶</div>
+          <div>
+            <h4>Hilangnya Kemampuan Beraktivitas</h4>
+            <p>Nyeri yang tidak ditangani akhirnya membatasi gerak, pekerjaan, hubungan sosial, dan kualitas hidup secara keseluruhan.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fear-stats reveal">
+    <div class="fear-stat">
+      <div class="fs-num">1 dari 5</div>
+      <div class="fs-label">Orang dewasa menderita nyeri kronis yang mengganggu aktivitas sehari-hari</div>
+    </div>
+    <div class="fear-stat">
+      <div class="fs-num">4×</div>
+      <div class="fs-label">Lebih tinggi risiko depresi pada penderita nyeri kronis yang tidak ditangani</div>
+    </div>
+    <div class="fear-stat">
+      <div class="fs-num">62%</div>
+      <div class="fs-label">Pasien nyeri kronis melaporkan penurunan produktivitas kerja yang signifikan</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP after Fear 1 -->
+<div class="cta-strip red-bg reveal">
+  <p>🚨 Jangan tunggu nyeri makin parah — <strong>tangani sekarang sebelum terlambat!</strong></p>
+  <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20khawatir%20nyeri%20saya%20makin%20parah%20dan%20ingin%20konsultasi." class="btn-wa-strip urgent" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+    Chat Sekarang — GRATIS
+  </a>
+</div>
+
+<!-- ════════════════════════════════════════
+     FEAR 2: BAHAYA OBAT ANTI NYERI
+════════════════════════════════════════ -->
+<section class="fear2">
+  <div class="reveal">
+    <div class="section-label" style="color:#fb923c">⚠️ Bahaya #2</div>
+    <h2 class="section-title">Obat Anti Nyeri:<br><em>Solusi Sementara,</em> Masalah Permanen</h2>
+    <p class="section-sub">Minum obat pereda nyeri memang terasa mudah. Tapi apa yang terjadi di dalam tubuhmu setelah berbulan-bulan mengonsumsinya?</p>
+  </div>
+
+  <div class="fear2-layout">
+    <div class="fear2-visual reveal">
+      <div class="fear2-img-wrap">
+        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&auto=format&fit=crop&q=80" alt="Obat-obatan anti nyeri" loading="lazy" />
+        <div class="fear2-label">
+          <p>Konsumsi NSAID (ibuprofen, aspirin, dll) secara rutin selama <strong>lebih dari 2 minggu</strong> sudah mulai merusak lapisan lambung dan membebani ginjal.</p>
+        </div>
+      </div>
+
+      <div class="pill-counter">
+        <p>Simulasi: 1 tablet/hari selama 1 bulan</p>
+        <div class="pill-row" id="pillRow"></div>
+        <p class="pill-note">🟠 = hari dikonsumsi &nbsp;|&nbsp; ⬤ = efek kumulatif pada organ</p>
+      </div>
+    </div>
+
+    <div class="fear2-cards reveal">
+      <div class="fear2-card">
+        <div class="fear2-card-icon">🫀</div>
+        <div>
+          <h4>Risiko Serangan Jantung & Stroke</h4>
+          <p>Penggunaan NSAID jangka panjang meningkatkan risiko kardiovaskular. FDA AS telah mengeluarkan peringatan resmi tentang hal ini.</p>
+          <span class="badge-danger">⚠️ Risiko Tinggi</span>
+        </div>
+      </div>
+      <div class="fear2-card">
+        <div class="fear2-card-icon">🫁</div>
+        <div>
+          <h4>Kerusakan Lambung & Usus</h4>
+          <p>Obat anti nyeri menghambat enzim pelindung lambung. Konsumsi rutin menyebabkan tukak lambung, perdarahan, bahkan perforasi usus.</p>
+          <span class="badge-danger">⚠️ Umum Terjadi</span>
+        </div>
+      </div>
+      <div class="fear2-card">
+        <div class="fear2-card-icon">🩸</div>
+        <div>
+          <h4>Gagal Ginjal & Kerusakan Hati</h4>
+          <p>Ginjal dan hati adalah filter utama obat. Konsumsi berlebihan parasetamol dan NSAID menjadi penyebab utama gagal ginjal akut dan kerusakan hati.</p>
+          <span class="badge-danger">⚠️ Mengancam Jiwa</span>
+        </div>
+      </div>
+      <div class="fear2-card">
+        <div class="fear2-card-icon">🔄</div>
+        <div>
+          <h4>Ketergantungan & Toleransi</h4>
+          <p>Semakin lama dikonsumsi, tubuh membutuhkan dosis lebih besar untuk efek yang sama. Inilah siklus ketergantungan yang berbahaya.</p>
+          <span class="badge-danger">⚠️ Siklus Berbahaya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP after Fear 2 -->
+<div class="cta-strip orange-bg reveal">
+  <p>⚠️ Masih mau terus bergantung obat? <strong style="color:#fb923c;">Ada cara yang lebih aman.</strong></p>
+  <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20berhenti%20bergantung%20obat%20anti%20nyeri%20dan%20ingin%20konsultasi%20terapi%20alami." class="btn-wa-strip" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+    Tanya Terapi Alami — Gratis
+  </a>
+</div>
+
+<!-- ════════════════════════════════════════
+     BRIDGE: PIVOT KE SOLUSI
+════════════════════════════════════════ -->
+<div class="bridge">
+  <div class="reveal">
+    <p class="bridge-text">
+      Sekarang kamu tahu risikanya.<br>
+      Tapi <span class="accent">ada kabar baik</span> —<br>
+      nyeri bisa <span class="accent">hilang dalam ~5 menit</span><br>
+      <span class="red">tanpa satu pun obat.</span>
+    </p>
+    <span class="bridge-arrow">↓</span>
+    <div style="margin-top:28px;display:flex;justify-content:center;">
+      <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20Trigger%20Point%20Therapy." class="btn-wa-strip" target="_blank" rel="noopener" style="animation-delay:0.5s;">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+        Tunjukkan Solusinya ke Saya
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SOLUTION HERO
+════════════════════════════════════════ -->
+<section class="solution-hero">
+  <div class="solution-hero-inner">
+    <div class="reveal">
+      <div class="section-label">✅ Solusi Nyata</div>
+      <h2 class="section-title">Trigger Point Therapy:<br><em>Langsung ke Sumber</em><br>Nyeri Hilang Tuntas</h2>
+      <p class="section-sub">Bukan obat. Bukan jarum. Hanya tekanan tepat di titik simpul otot yang menjadi akar nyeri. Metode ini terbukti klinis dan sudah digunakan terapis di seluruh dunia.</p>
+      <ul class="solution-benefits">
+        <li>
+          <div class="sol-icon">🎯</div>
+          <div><h4>Menyasar Akar Masalah, Bukan Gejala</h4><p>Trigger point adalah simpul otot tegang yang mengirimkan sinyal nyeri. Tekan dan lepaskan — nyeri berhenti dari sumbernya.</p></div>
+        </li>
+        <li>
+          <div class="sol-icon">⚡</div>
+          <div><h4>Hasil Terasa dalam ~5 Menit</h4><p>Mayoritas pasien merasakan pengurangan nyeri signifikan pada sesi pertama. Bukan janji kosong.</p></div>
+        </li>
+        <li>
+          <div class="sol-icon">🌿</div>
+          <div><h4>100% Alami — Nol Efek Samping</h4><p>Tidak ada bahan kimia, tidak ada risiko organ. Aman untuk jangka panjang, halal, dan tanpa efek samping.</p></div>
+        </li>
+        <li>
+          <div class="sol-icon">🏠</div>
+          <div><h4>Bisa Dilakukan dari Rumah</h4><p>Terapi online via video call WhatsApp. Terapis memandu langsung. Tidak perlu ke mana-mana.</p></div>
+        </li>
+      </ul>
+      <div style="margin-top:32px;">
+        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20trigger%20point%20therapy." class="btn-wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
-          Chat WhatsApp Sekarang
+          Saya Mau Bebas Nyeri Sekarang
         </a>
-        <a href="#layanan" class="btn-scroll">Lihat Layanan ↓</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item"><div class="num">~5'</div><div class="label">Nyeri Hilang</div></div>
-        <div class="stat-item"><div class="num">0</div><div class="label">Efek Samping Obat</div></div>
-        <div class="stat-item"><div class="num">2</div><div class="label">Cara Terapi</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- PAIN TYPES -->
-  <section class="pain" id="nyeri">
-    <div class="reveal">
-      <div class="section-label">Nyeri yang Kami Tangani</div>
-      <h2 class="section-title">Nyeri di mana pun,<br><em>kami bisa bantu</em></h2>
-      <p class="section-sub">Trigger Point Therapy efektif untuk berbagai jenis nyeri otot dan sendi yang mengganggu aktivitas sehari-hari Anda.</p>
-    </div>
-    <div class="pain-grid reveal">
-      <div class="pain-card"><div class="pain-icon">🤕</div><h3>Sakit Kepala & Migrain</h3><p>Nyeri kepala tegang hingga migrain yang berulang.</p></div>
-      <div class="pain-card"><div class="pain-icon">🦷</div><h3>Nyeri Leher & Bahu</h3><p>Kaku leher, nyeri bahu akibat postur atau stres.</p></div>
-      <div class="pain-card"><div class="pain-icon">💪</div><h3>Nyeri Punggung</h3><p>Punggung atas maupun bawah — termasuk pinggang.</p></div>
-      <div class="pain-card"><div class="pain-icon">🦵</div><h3>Nyeri Lutut & Kaki</h3><p>Nyeri sendi lutut, betis tegang, atau plantar fasciitis.</p></div>
-      <div class="pain-card"><div class="pain-icon">✋</div><h3>Nyeri Tangan & Siku</h3><p>Tennis elbow, carpal tunnel, nyeri pergelangan tangan.</p></div>
-      <div class="pain-card"><div class="pain-icon">⚡</div><h3>Nyeri Otot Lainnya</h3><p>Otot kram, tegang, atau nyeri misterius yang tak kunjung hilang.</p></div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how" id="cara-kerja">
-    <div class="reveal">
-      <div class="section-label" style="color:var(--green-bright)">Cara Kerja Terapi</div>
-      <h2 class="section-title">Sederhana. Cepat.<br><em style="color:var(--gold-light)">Terasa hasilnya.</em></h2>
-      <p class="section-sub">Tidak perlu jarum, tidak perlu obat. Hanya tekanan tepat di titik sumber nyeri.</p>
-    </div>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-icon">📞</div>
-        <h3>Hubungi & Ceritakan</h3>
-        <p>Chat atau video call WhatsApp. Ceritakan letak dan jenis nyeri Anda kepada terapis kami.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-icon">🎯</div>
-        <h3>Temukan Trigger Point</h3>
-        <p>Terapis memandu Anda menemukan titik simpul otot (trigger point) sumber nyeri yang tepat.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-icon">👆</div>
-        <h3>Tekan & Lepaskan</h3>
-        <p>Tekanan lembut selama beberapa detik pada titik tersebut melepaskan ketegangan otot.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-icon">✨</div>
-        <h3>Nyeri Hilang ±5 Menit</h3>
-        <p>Sebagian besar pasien merasakan pengurangan nyeri signifikan dalam hitungan menit, dengan izin Allah ﷻ.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="why" id="keunggulan">
-    <div class="why-inner">
-      <div class="why-visual reveal">
-        <div class="why-card-main">
-          <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-bright);margin-bottom:8px;">Rata-rata durasi</p>
-          <div class="big-time"><span>5</span><small>menit</small></div>
-          <p>Kebanyakan pasien merasakan perubahan nyata dalam sesi pertama, tanpa harus menunggu berhari-hari atau bergantung pada obat penghilang nyeri.</p>
-        </div>
-        <div class="why-card-float">
-          <strong>🚫 Tanpa Obat</strong>
-          Tidak ada efek samping. Tidak ada ketergantungan.
+    <div class="reveal reveal-delay-2">
+      <div class="solution-img-wrap">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&auto=format&fit=crop&q=80" alt="Trigger point therapy treatment" loading="lazy" />
+        <div class="solution-img-badge">✓ Tanpa Obat</div>
+        <div class="solution-img-stat">
+          <div class="big">~5'</div>
+          <small>Rata-rata nyeri<br>mulai hilang</small>
         </div>
       </div>
-      <div class="reveal">
-        <div class="section-label">Kenapa BebasNyeri?</div>
-        <h2 class="section-title">Terapi yang<br><em>benar-benar bekerja</em></h2>
-        <ul class="why-list">
-          <li>
-            <div class="icon">🎯</div>
-            <div><h4>Langsung ke Sumber Nyeri</h4><p>Bukan hanya meredakan gejala, Trigger Point Therapy menyasar akar masalah otot yang tegang.</p></div>
-          </li>
-          <li>
-            <div class="icon">🏠</div>
-            <div><h4>Bisa Dari Rumah</h4><p>Terapi online via video call WhatsApp — pasien dipandu langkah demi langkah dari kenyamanan rumah sendiri.</p></div>
-          </li>
-          <li>
-            <div class="icon">🌿</div>
-            <div><h4>Alami & Bebas Obat</h4><p>Tidak ada bahan kimia, tidak ada jarum suntik. Murni teknik manual yang aman dan halal.</p></div>
-          </li>
-          <li>
-            <div class="icon">⚡</div>
-            <div><h4>Hasil Cepat & Terukur</h4><p>Pasien merasakan perubahan dalam ~5 menit pertama. Bukan janji kosong — coba dan rasakan sendiri.</p></div>
-          </li>
-        </ul>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LAYANAN -->
-  <section class="service" id="layanan">
-    <div style="text-align:center;" class="reveal">
-      <div class="section-label">Pilih Layanan Anda</div>
-      <h2 class="section-title">Online atau <em>Offline</em>,<br>kami siap hadir</h2>
-      <p class="section-sub" style="margin: 0 auto 48px;">Pilih yang paling nyaman untuk kondisi Anda saat ini.</p>
+<!-- ════════════════════════════════════════
+     COMPARISON TABLE
+════════════════════════════════════════ -->
+<section class="compare">
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">Perbandingan Jelas</div>
+    <h2 class="section-title">Obat Anti Nyeri<br><em>vs</em> Trigger Point Therapy</h2>
+    <p class="section-sub" style="margin:0 auto 48px;">Lihat perbedaannya secara langsung — mana yang lebih aman dan lebih efektif untuk jangka panjang?</p>
+  </div>
+  <div class="reveal" style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Aspek</th>
+          <th>💊 Obat Anti Nyeri</th>
+          <th>🎯 Trigger Point Therapy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Mengatasi Akar Masalah</td><td><span class="badge-bad">✗ Tidak</span> — hanya meredam gejala sementara</td><td><span class="badge-good">✓ Ya</span> — langsung ke sumber nyeri</td></tr>
+        <tr><td>Kecepatan Hasil</td><td>30–60 menit (bereaksi kimia)</td><td><span class="badge-good">~5 menit</span> terasa perubahan</td></tr>
+        <tr><td>Efek Samping</td><td><span class="badge-bad">Banyak</span> — lambung, ginjal, jantung, hati</td><td><span class="badge-good">Tidak ada</span> efek samping</td></tr>
+        <tr><td>Ketergantungan</td><td><span class="badge-bad">Ya</span> — dosis makin lama makin besar</td><td><span class="badge-good">Tidak ada</span> ketergantungan</td></tr>
+        <tr><td>Biaya Jangka Panjang</td><td>Terus bertambah seumur hidup</td><td><span class="badge-good">Terapi singkat</span>, bisa mandiri</td></tr>
+        <tr><td>Bisa dari Rumah?</td><td>Ya, tapi solusinya sementara</td><td><span class="badge-good">✓ Ya</span> — via video call WhatsApp</td></tr>
+        <tr><td>Aman untuk Organ?</td><td><span class="badge-bad">Tidak aman</span> jika dipakai rutin</td><td><span class="badge-good">100% aman</span> untuk semua organ</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cta-strip mid reveal" style="margin-top:40px;padding:28px 0 0;">
+    <p>✅ Pilihan sudah jelas. <strong>Mau mulai terapi tanpa obat sekarang?</strong></p>
+    <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20mencoba%20Trigger%20Point%20Therapy%20sebagai%20alternatif%20obat%20anti%20nyeri." class="btn-wa-strip" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+      Ya, Saya Mau Coba!
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+<section class="how">
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">Cara Kerja Terapi</div>
+    <h2 class="section-title">Prosesnya Mudah,<br><em>Hasilnya Nyata</em></h2>
+    <p class="section-sub" style="margin:0 auto 48px;">4 langkah sederhana — dan nyeri yang mengganggumu bisa mulai hilang hari ini juga.</p>
+  </div>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">📞</div>
+      <h3>Hubungi via WhatsApp</h3>
+      <p>Chat atau video call langsung. Ceritakan di mana dan seperti apa nyeri yang kamu rasakan.</p>
     </div>
-    <div class="service-grid reveal">
-      <div class="service-card online">
-        <span class="s-icon">📱</span>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">🗺️</div>
+      <h3>Identifikasi Trigger Point</h3>
+      <p>Terapis memandu menemukan titik simpul otot yang menjadi akar nyeri secara akurat.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">👆</div>
+      <h3>Tekanan Tepat, Nyeri Merespon</h3>
+      <p>Tekanan lembut beberapa detik pada trigger point melepaskan ketegangan otot dari dalam.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">✨</div>
+      <h3>Nyeri Hilang ~5 Menit</h3>
+      <p>Sebagian besar pasien merasakan perubahan nyata dalam hitungan menit, dengan izin Allah ﷻ.</p>
+    </div>
+  </div>
+  <div class="cta-strip light reveal" style="margin-top:48px;padding:28px 0 0;">
+    <p>🎯 Proses sesederhana itu. <strong>Kapan kamu mau mulai?</strong></p>
+    <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20mencoba%20terapi%20sekarang.%20Tolong%20panduan%20saya%20menemukan%20trigger%20point." class="btn-wa-strip" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+      Mulai Terapi Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     LAYANAN
+════════════════════════════════════════ -->
+<section class="service" id="layanan">
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">Pilih Layanan</div>
+    <h2 class="section-title">Online atau <em>Langsung</em>,<br>Terapis Kami Siap</h2>
+    <p class="section-sub" style="margin:0 auto 48px;">Pilih yang paling nyaman — dari kenyamanan rumahmu, atau kunjungi kami langsung.</p>
+  </div>
+  <div class="service-grid reveal">
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&auto=format&fit=crop&q=80" alt="Online consultation via phone" loading="lazy" />
+        <div class="service-card-img-overlay"></div>
+        <div class="service-card-img-badge">📱 Online</div>
+      </div>
+      <div class="service-card-body">
         <h3>Terapi Online</h3>
-        <p>Konsultasi dan terapi dari mana saja via <strong style="color:var(--green-light)">video call WhatsApp</strong>. Terapis akan memandu Anda menemukan dan menekan Trigger Point secara langsung.</p>
-        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20terapi%20online%20via%20video%20call.%20Nyeri%20saya%20di%3A" class="btn-primary" target="_blank" rel="noopener">
+        <p>Via <strong>video call WhatsApp</strong> langsung dengan terapis kami. Kamu dipandu step-by-step menemukan dan menekan trigger point dari rumah. Cepat, mudah, tanpa perlu keluar.</p>
+        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20terapi%20online%20via%20video%20call%20WhatsApp.%20Nyeri%20saya%20di%3A" class="btn-primary" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
           Mulai Video Call
         </a>
       </div>
-      <div class="service-card offline">
-        <span class="s-icon">🏡</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&auto=format&fit=crop&q=80" alt="Terapi pijat offline klinik" loading="lazy" />
+        <div class="service-card-img-overlay"></div>
+        <div class="service-card-img-badge">🏡 Offline</div>
+      </div>
+      <div class="service-card-body">
         <h3>Terapi Offline</h3>
-        <p>Kunjungi <strong style="color:var(--green-deep)">rumah terapi kami langsung</strong> untuk sesi tatap muka yang lebih personal. Nikmati suasana nyaman dan penanganan langsung dari terapis.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" class="btn-secondary" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" style="fill:none;stroke:var(--cream);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;width:18px;height:18px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Lihat Lokasi
-          </a>
-          <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20buat%20janji%20terapi%20offline." class="btn-primary" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
-            Buat Janji
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testi" id="testimoni">
-    <div style="text-align:center;" class="reveal">
-      <div class="section-label">Apa Kata Mereka</div>
-      <h2 class="section-title">Nyata.<br><em>Dirasakan langsung.</em></h2>
-      <p class="section-sub" style="margin: 0 auto 48px;">Ribuan pasien telah merasakan manfaat Trigger Point Therapy bersama kami.</p>
-    </div>
-    <div class="testi-grid reveal">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>Nyeri leher saya yang sudah <em>3 tahun</em> hilang cuma dalam 1 sesi! Masya Allah. Tidak percaya sebelumnya tapi sekarang saya sudah bisa gerak bebas.</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div><div class="testi-name">Rahma S.</div><div class="testi-loc">Medan · Terapi Online</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>Saya skeptis awalnya. Tapi <em>5 menit video call</em> kemudian, nyeri punggung bawah saya yang bikin susah jalan sudah jauh berkurang. Alhamdulillah.</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--green-deep);">A</div>
-          <div><div class="testi-name">Ahmad F.</div><div class="testi-loc">Pekanbaru · Terapi Online</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>Migrain saya sudah menahun. Selama ini hanya bisa andalkan obat. Setelah terapi offline di sini, <em>frekuensinya berkurang drastis</em>. Sangat recommended!</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--gold);color:var(--green-deep);">S</div>
-          <div><div class="testi-name">Siti N.</div><div class="testi-loc">Medan · Terapi Offline</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="reveal">
-      <h2 class="section-title">Jangan biarkan nyeri<br><em style="color:var(--green-bright)">kendalikan hidupmu</em></h2>
-      <p class="section-sub">Satu langkah kecil — satu pesan WhatsApp — bisa jadi awal dari hidup tanpa nyeri, dengan izin Allah ﷻ.</p>
-      <div class="cta-group">
-        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20gratis%20mengenai%20nyeri%20saya." class="btn-wa-large" target="_blank" rel="noopener">
+        <p>Datang langsung ke <strong>rumah terapi kami</strong> untuk sesi tatap muka yang lebih personal. Nikmati penanganan langsung dari tangan terapis berpengalaman.</p>
+        <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20buat%20janji%20terapi%20offline." class="btn-primary" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
-          Konsultasi Gratis Sekarang
+          Buat Janji
         </a>
-        <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" class="btn-maps" target="_blank" rel="noopener">
-          📍 Kunjungi Klinik
-        </a>
+        <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" class="btn-secondary" target="_blank" rel="noopener">📍 Lokasi</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#" class="logo">Bebas<span style="color:var(--green-bright)">Nyeri</span>.com</a>
-        <p>Bebaskan nyerimu tanpa ketergantungan obat. Trigger Point Therapy — cepat, aman, alami.</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Hubungi Kami</h4>
-        <a href="https://wa.me/6285276456789" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" style="fill:var(--green-bright);width:16px;height:16px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
-          +62 852-7645-6789
-        </a>
-        <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" style="fill:none;stroke:var(--green-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;width:16px;height:16px;flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Lihat di Google Maps
-        </a>
-        <a href="http://www.bebasnyeri.com" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" style="fill:none;stroke:var(--green-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;width:16px;height:16px;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          www.bebasnyeri.com
-        </a>
+<!-- CTA STRIP after Service -->
+<div class="cta-strip dark reveal">
+  <p>📞 Pilih online atau offline — <strong>keduanya bisa dimulai dengan satu chat!</strong></p>
+  <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20buat%20jadwal%20terapi%20(online%2Foffline)." class="btn-wa-strip" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+    Jadwalkan Terapi Saya
+  </a>
+</div>
+
+<!-- ════════════════════════════════════════
+     PAIN TYPES
+════════════════════════════════════════ -->
+<section class="pain-types">
+  <div class="reveal">
+    <div class="section-label">Nyeri yang Kami Tangani</div>
+    <h2 class="section-title">Nyeri di Mana Pun,<br><em>Ada Solusinya</em></h2>
+    <p class="section-sub">Trigger Point Therapy efektif untuk hampir semua jenis nyeri otot dan sendi.</p>
+  </div>
+  <div class="pain-grid reveal">
+    <div class="pain-card"><div class="icon">🤕</div><h3>Sakit Kepala & Migrain</h3><p>Nyeri kepala berulang dan migrain menahun.</p></div>
+    <div class="pain-card"><div class="icon">🦷</div><h3>Nyeri Leher & Bahu</h3><p>Kaku leher, tegang bahu akibat postur.</p></div>
+    <div class="pain-card"><div class="icon">💪</div><h3>Nyeri Punggung</h3><p>Punggung atas, bawah, dan pinggang.</p></div>
+    <div class="pain-card"><div class="icon">🦵</div><h3>Nyeri Lutut & Kaki</h3><p>Sendi lutut, betis, dan plantar fasciitis.</p></div>
+    <div class="pain-card"><div class="icon">✋</div><h3>Tangan & Siku</h3><p>Tennis elbow, carpal tunnel syndrome.</p></div>
+    <div class="pain-card"><div class="icon">⚡</div><h3>Nyeri Otot Lainnya</h3><p>Kram, tegang, atau nyeri misterius.</p></div>
+  </div>
+  <div class="cta-strip light reveal" style="margin-top:40px;padding:28px 0 0;">
+    <p>💬 Nyerimu ada di daftar di atas? <strong>Konsultasikan sekarang — gratis!</strong></p>
+    <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20mengalami%20nyeri%20dan%20ingin%20konsultasi%20gratis." class="btn-wa-strip" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+      Konsultasi Nyeriku Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section class="testi" id="testimoni">
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">Cerita Nyata</div>
+    <h2 class="section-title">Mereka Sudah<br><em>Bebas dari Nyeri</em></h2>
+    <p class="section-sub" style="margin:0 auto 48px;">Tanpa obat. Tanpa efek samping. Dengan izin Allah ﷻ.</p>
+  </div>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Sudah 3 tahun nyeri leher saya. Sudah coba berbagai obat sampai lambung saya bermasalah. Satu sesi terapi online — <em>nyeri hilang 80%!</em> Masya Allah.</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--green-mid)">R</div>
+        <div><div class="testi-name">Rahma S.</div><div class="testi-loc">Medan · Terapi Online</div></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="tagline">© 2025 BebasNyeri.com · Semua hak dilindungi</span>
-      <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Saya takut minum obat pereda nyeri terus karena sudah merasakan efek ke lambung. Alhamdulillah ketemu BebasNyeri — <em>5 menit video call, nyeri punggung langsung berkurang drastis.</em></blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--green-deep)">A</div>
+        <div><div class="testi-name">Ahmad F.</div><div class="testi-loc">Pekanbaru · Terapi Online</div></div>
+      </div>
     </div>
-  </footer>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Dokter bilang saya harus operasi lutut. Saya coba dulu terapi offline di sini. <em>Setelah 3 sesi, saya sudah bisa jalan normal</em> tanpa nyeri. Tidak jadi operasi!</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--gold);color:var(--green-deep)">S</div>
+        <div><div class="testi-name">Siti N.</div><div class="testi-loc">Medan · Terapi Offline</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-strip dark reveal" style="margin-top:48px;padding:28px 0 0;">
+    <p>🌿 Giliran kamu merasakan bebas nyeri. <strong>Hubungi terapis kami sekarang.</strong></p>
+    <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20baca%20testimoni%20dan%20ingin%20mencoba%20terapi%20juga.%20Nyeri%20saya%20di%3A" class="btn-wa-strip" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+      Saya Mau Bebas Nyeri Juga!
+    </a>
+  </div>
+</section>
 
-  <script>
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    });
+<!-- ════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="reveal">
+    <h2 class="section-title">Hentikan Siklus Nyeri<br>&amp; <em style="color:var(--green-bright)">Ketergantungan Obat</em><br>Hari Ini Juga</h2>
+    <p class="section-sub">Satu pesan WhatsApp bisa mengubah segalanya. Konsultasi pertama <strong style="color:var(--green-bright)">GRATIS</strong>. Tidak ada yang perlu hilang selain rasa sakitmu.</p>
+    <div class="cta-group">
+      <a href="https://wa.me/6285276456789?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20GRATIS%20untuk%20nyeri%20yang%20saya%20alami.%20Saya%20tidak%20mau%20bergantung%20obat%20lagi." class="btn-wa-large" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+        Konsultasi Gratis Sekarang
+      </a>
+      <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" class="btn-maps" target="_blank" rel="noopener">📍 Kunjungi Klinik</a>
+    </div>
+    <p style="color:rgba(250,246,238,0.35);font-size:0.82rem;margin-top:28px;position:relative;z-index:2;">
+      +62 852-7645-6789 &nbsp;·&nbsp; www.bebasnyeri.com
+    </p>
+  </div>
+</section>
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">Bebas<span style="color:var(--green-bright)">Nyeri</span>.com</a>
+      <p>Bebaskan nyerimu tanpa ketergantungan obat. Trigger Point Therapy — cepat, alami, tanpa efek samping.</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Hubungi Kami</h4>
+      <a href="https://wa.me/6285276456789" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" style="fill:var(--green-bright);width:15px;height:15px;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.521 5.836L.057 23.887l6.195-1.43A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.371l-.359-.213-3.677.847.873-3.589-.234-.371A9.793 9.793 0 012.182 12C2.182 6.565 6.565 2.182 12 2.182c5.434 0 9.818 4.383 9.818 9.818 0 5.434-4.384 9.818-9.818 9.818z"/></svg>
+        +62 852-7645-6789
+      </a>
+      <a href="https://maps.app.goo.gl/nADgyvY3T6XYyr6z6" target="_blank" rel="noopener">
+        📍 Lihat di Google Maps
+      </a>
+      <a href="http://www.bebasnyeri.com">🌐 www.bebasnyeri.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="tagline">© 2025 BebasNyeri.com · Semua hak dilindungi</span>
+    <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
+  </div>
+</footer>
+
+<script>
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Pill counter visual
+  const pillRow = document.getElementById('pillRow');
+  if (pillRow) {
+    for (let i = 0; i < 30; i++) {
+      const pill = document.createElement('div');
+      pill.className = 'pill' + (i >= 14 ? ' dead' : '');
+      pill.title = i < 14 ? 'Hari ke-' + (i+1) + ': Nyeri sementara hilang' : 'Hari ke-' + (i+1) + ': Organ mulai terdampak';
+      pillRow.appendChild(pill);
+    }
+  }
+</script>
 </body>
 </html>
